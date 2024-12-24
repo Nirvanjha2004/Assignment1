@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from '../firebase/config';
-import { createUserWithEmailAndPassword } from '@firebase/auth';
-import { doc, setDoc } from 'firebase/firestore';
+import { createUserWithEmailAndPassword } from 'firebase/auth/lite';
+import { doc, setDoc } from 'firebase/firestore/lite';
 
 export default function SignupPage() {
     const navigate = useNavigate();
