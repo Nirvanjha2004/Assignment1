@@ -10,7 +10,16 @@ export default defineConfig({
       transformMixedEsModules: true
     }
   },
+  resolve: {
+    alias: {
+      './runtimeConfig': './runtimeConfig.browser',
+    }
+  },
   optimizeDeps: {
-    include: ['@firebase/app', '@firebase/firestore', '@firebase/auth']
+    esbuildOptions: {
+      define: {
+        global: 'globalThis'
+      }
+    }
   }
 })
