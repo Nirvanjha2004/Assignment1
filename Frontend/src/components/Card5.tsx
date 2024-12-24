@@ -5,19 +5,19 @@ function Card5() {
   const navigate = useNavigate();
   const products = [
     {
-      imgSrc: "public/products/product16.png",
+      imgSrc: "/products/product16.png",
       title1: "Hoodies & Sweatshirt",
     },
     {
-      imgSrc: "public/products/product17.png",
+      imgSrc: "/products/product17.png",
       title1: "Coats and Parkas",
     },
     {
-      imgSrc: "public/products/product18.png",
+      imgSrc: "/products/product18.png",
       title1: "Tees & T-Shirt",
     },
     {
-      imgSrc: "public/products/product19.png",
+      imgSrc: "/products/product19.png",
       title1: "Boxers",
     },
   ];

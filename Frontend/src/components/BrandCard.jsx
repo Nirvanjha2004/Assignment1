@@ -1,16 +1,16 @@
 function BrandCard() {
     const brands = [
-        { imgSrc: 'public/products/product56.png' },
-        { imgSrc: 'public/products/product57.png' },
-        { imgSrc: 'public/products/product58.png' },
-        { imgSrc: 'public/products/product59.png' },
-        { imgSrc: 'public/products/product60.png' },
+        { imgSrc: '/products/product56.png' },
+        { imgSrc: '/products/product57.png' },
+        { imgSrc: '/products/product58.png' },
+        { imgSrc: '/products/product59.png' },
+        { imgSrc: '/products/product60.png' },
     ];
 
     return (
         <div className="relative mt-10 md:mt-20 rounded-lg mx-4 md:mx-28">
             <img
-                src="public/products/product55.png"
+                src="/products/product55.png"
                 alt=""
                 className="object-cover rounded-lg w-full h-[300px] md:h-auto"
             />

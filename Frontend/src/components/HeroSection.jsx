@@ -13,7 +13,7 @@ function HeroSection() {
         <p className="tracking-[4px] md:tracking-[7px] text-[18px] md:text-[23px]">Cool/Colourful/Comfy</p>
         <button className="bg-white text-slate-600 font-semibold w-[140px] md:w-[180px] h-10 md:h-12 rounded-lg" onClick={() => navigate('/products')}>Shop Now</button>
       </div>
-      <img src="public/products/Home.jpg" alt="" className="w-full h-[400px] md:h-auto object-cover" />
+      <img src="/products/Home.jpg" alt="" className="w-full h-[400px] md:h-auto object-cover" />
     </div>
   );
 }

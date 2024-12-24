@@ -21,7 +21,8 @@ function ShopPage() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, 'products'));
+        const productsRef = collection(db, 'products');
+        const querySnapshot = await getDocs(productsRef);
         const productsData = querySnapshot.docs.map(doc => ({
           id: doc.id,
           ...doc.data()
@@ -51,7 +52,7 @@ function ShopPage() {
       { (
         <button
           onClick={handleSeedData}
-          className="bg-black "
+          className="bg-black hidden"
         >
           Seed Products Data
         </button>

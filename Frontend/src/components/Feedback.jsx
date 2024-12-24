@@ -3,15 +3,15 @@ import React from "react";
 function FeedBack() {
   const products = [
     {
-      imgSrc: "public/products/product52.png",
+      imgSrc: "/products/product52.png",
       title1: "Floyed Miles",
     },
     {
-      imgSrc: "public/products/product53.png",
+      imgSrc: "/products/product53.png",
       title1: "Ronald Richards",
     },
     {
-      imgSrc: "public/products/product54.png",
+      imgSrc: "/products/product54.png",
       title1: "Savannah Nguyen",
     },
   ];
@@ -27,7 +27,7 @@ function FeedBack() {
         <div key={ind} className="flex p-4 justify-center rounded-lg gap-4 w-[340px] h-[250px] flex-col border-[#bebcbd] border-2">
           <div className="flex justify-between"> 
             <img src={obj.imgSrc} className="h-10 rounded-lg w-10" alt="" />
-            <img src="public/rating.png" className="h-8" alt="" />
+            <img src="/rating.png" className="h-8" alt="" />
           </div>
           <div className="flex flex-col gap-4 justify-center">
             <h1 className="font-semibold text-xl">{obj.title1}</h1>

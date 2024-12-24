@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth } from '../firebase/config';
+import { auth, db } from '../firebase/config';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 
@@ -34,9 +34,13 @@ export default function SignupPage() {
             sessionStorage.setItem('userId', userCredential.user.uid);
             
             // Navigate to shop page
-            navigate('/shop');
+            navigate('/');
         } catch (err) {
-            setError(err.message);
+            if (err.code === 'auth/email-already-in-use') {
+                setError('Email already exists');
+            } else {
+                setError('Failed to create account');
+            }
         }
     };
 
@@ -53,7 +57,7 @@ export default function SignupPage() {
       {/* Left side - Image */}
       <div className="hidden lg:block lg:w-1/2">
         <img 
-          src="public/Image.png" 
+          src="/products/Image.png" 
           alt="Fashion" 
           className="w-full h-full object-cover"
         />
@@ -63,100 +67,71 @@ export default function SignupPage() {
       <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 md:px-16 lg:px-24">
         <div className="max-w-md w-full mx-auto">
           <h1 className="text-3xl font-semibold mb-2">Sign Up</h1>
-          <p className="text-gray-600 mb-8">Sign up for free to access to in any of our products</p>
+          <p className="text-gray-600 mb-8">Sign up for free to access any of our products</p>
+
+          {error && (
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+              {error}
+            </div>
+          )}
 
           <form className="space-y-6" onSubmit={handleSubmit}>
             {/* Name Field */}
             <div className="space-y-2">
-              <label className="block text-gray-700">
-                Full Name
-              </label>
+              <label className="text-sm font-medium text-gray-700">Name</label>
               <input
-                name="name"
                 type="text"
+                name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600"
-                placeholder="John Doe"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md"
                 required
               />
             </div>
 
+            {/* Email Field */}
             <div className="space-y-2">
-              <label className="block text-gray-700">
-                Email Address
-              </label>
+              <label className="text-sm font-medium text-gray-700">Email</label>
               <input
-                name="email"
                 type="email"
+                name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600"
-                placeholder="designer@gmail.com"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md"
                 required
               />
-              <p className="text-red-500 text-sm hidden">Error Message</p>
             </div>
 
+            {/* Password Field */}
             <div className="space-y-2">
-              <div className="flex justify-between">
-                <label className="block text-gray-700">Password</label>
-                <button 
-                  type="button"
-                  className="text-sm text-gray-500"
-                >
-                  Hide
-                </button>
-              </div>
+              <label className="text-sm font-medium text-gray-700">Password</label>
               <input
-                name="password"
                 type="password"
+                name="password"
                 value={formData.password}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600"
-                placeholder="Enter your password"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md"
                 required
               />
-              <p className="text-gray-500 text-sm">Use 8 or more characters with a mix of letters, numbers & symbols</p>
             </div>
 
-            <div className="space-y-4">
-              <label className="flex items-center gap-2">
-                <input 
-                  type="checkbox" 
-                  className="rounded border-gray-300 text-purple-600 focus:ring-purple-500"
-                  required
-                />
-                <span className="text-gray-600">
-                  Agree to our{' '}
-                  <a href="#" className="text-purple-600 hover:underline">Terms of use</a>
-                  {' '}and{' '}
-                  <a href="#" className="text-purple-600 hover:underline">Privacy Policy</a>
-                </span>
-              </label>
-
-              <label className="flex items-center gap-2">
-                <input 
-                  type="checkbox" 
-                  className="rounded border-gray-300 text-purple-600 focus:ring-purple-500"
-                />
-                <span className="text-gray-600">Subscribe to our monthly newsletter</span>
-              </label>
-            </div>
-
+            {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-purple-600 text-white py-3 rounded hover:bg-purple-700 transition-colors"
+              className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800"
             >
               Sign Up
             </button>
           </form>
 
-          <p className="mt-8 text-center text-gray-600">
+          <p className="mt-4 text-center text-gray-600">
             Already have an account?{' '}
-            <a href="/signin" className="text-purple-600 hover:underline">
-              Log in
-            </a>
+            <span
+              onClick={() => navigate('/signin')}
+              className="text-black cursor-pointer hover:underline"
+            >
+              Sign In
+            </span>
           </p>
         </div>
       </div>

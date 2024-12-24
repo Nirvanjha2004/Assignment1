@@ -80,9 +80,9 @@ export default function Navbar() {
 
 
         <div className="flex items-center gap-4">
-          <img src="public/products/product61.png" onClick={() => navigate('/complaint')} alt="" className="w-6 h-6 cursor-pointer"/>
-          <img src="public/products/product62.jpg" onClick={() => navigate('/cart')} alt="" className="w-6 h-6 cursor-pointer"/>
-          <img src="public/products/product63.png" onClick={() => navigate('/profile')} alt="" className="w-6 h-6 cursor-pointer"/>
+          <img src="/products/product61.png" onClick={() => navigate('/complaint')} alt="" className="w-6 h-6 cursor-pointer"/>
+          <img src="/products/product62.jpg" onClick={() => navigate('/cart')} alt="" className="w-6 h-6 cursor-pointer"/>
+          <img src="/products/product63.png" onClick={() => navigate('/profile')} alt="" className="w-6 h-6 cursor-pointer"/>
         </div>
       </div>
     </div>

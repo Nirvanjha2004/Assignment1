@@ -4,7 +4,7 @@ export default function ShopNowCard() {
       {/* Left side - Image and Content */}
       <div className="lg:w-1/2 relative">
         <img 
-          src="/public/products/product51.png"
+          src="/products/product51.png"
           alt="Fashion Models" 
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -30,7 +30,7 @@ export default function ShopNowCard() {
       {/* Right side - Image */}
       <div className="lg:w-1/2 relative min-h-[300px] md:min-h-0">
         <img 
-          src="/public/products/product50.png" 
+          src="/products/product50.png" 
           alt="Tropical Background" 
           className="h-full w-full object-cover"
         />

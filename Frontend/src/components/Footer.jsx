@@ -40,16 +40,16 @@ function Footer() {
             <div className="flex flex-col md:flex-row justify-between items-center w-full max-w-7xl mt-6 md:mt-10 gap-6">
                 <div className="flex gap-4">
                     {/* Social icons */}
-                    <img src="public/26.png" alt="Social Icon 1" className="h-8 w-8 cursor-pointer" />
-                    <img src="public/27.png" alt="Social Icon 2" className="h-8 w-8 cursor-pointer" />
-                    <img src="public/28.png" alt="Social Icon 3" className="h-8 w-8 cursor-pointer" />
-                    <img src="public/29.png" alt="Social Icon 4" className="h-8 w-8 cursor-pointer" />
+                    <img src="/products/product100.png" alt="Social Icon 1" className="h-8 w-8 cursor-pointer" />
+                    <img src="/products/product101.png" alt="Social Icon 2" className="h-8 w-8 cursor-pointer" />
+                    <img src="/products/product102.png" alt="Social Icon 3" className="h-8 w-8 cursor-pointer" />
+                    <img src="/products/product103.png" alt="Social Icon 4" className="h-8 w-8 cursor-pointer" />
                 </div>
                 <div className="flex flex-col items-center">
                     <h1 className="text-white text-lg md:text-xl mb-3">Download The App</h1>
                     <div className="flex gap-3">
-                        <img src="public/30.png" alt="App Store" className="h-8 md:h-10 w-auto" />
-                        <img src="public/31.png" alt="Google Play" className="h-8 md:h-10 w-auto" />
+                        <img src="/products/product104.png" alt="App Store" className="h-8 md:h-10 w-auto" />
+                        <img src="/products/product105.png" alt="Google Play" className="h-8 md:h-10 w-auto" />
                     </div>
                 </div>
             </div>

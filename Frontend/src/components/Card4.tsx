@@ -5,35 +5,35 @@ function Card4() {
   const navigate = useNavigate();
   const products = [
     {
-      imgSrc: "public/products/product8.png",
+      imgSrc: "/products/product8.png",
       title1: "Shirts",
     },
     {
-      imgSrc: "public/products/product9.png",
+      imgSrc: "/products/product9.png",
       title1: "Printed T-Shirts",
     },
     {
-      imgSrc: "public/products/product10.png",
+      imgSrc: "/products/product10.png",
       title1: "Plain T-Shirt",
     },
     {
-      imgSrc: "public/products/product11.png",
+      imgSrc: "/products/product11.png",
       title1: "Polo T-Shirt",
     },
     {
-      imgSrc: "public/products/product12.png",
+      imgSrc: "/products/product12.png",
       title1: "Hoodies & Sweatshirt",
     },
     {
-      imgSrc: "public/products/product13.png",
+      imgSrc: "/products/product13.png",
       title1: "Jeans",
     },
     {
-      imgSrc: "public/products/product14.png",
+      imgSrc: "/products/product14.png",
       title1: "Activewear",
     },
     {
-      imgSrc: "public/products/product15.png",
+      imgSrc: "/products/product15.png",
       title1: "Boxers",
     },
   ];

@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { db } from '../firebase/config';
-import { collection, getDocs } from 'firebase/firestore/lite';
+import { collection, getDocs } from 'firebase/firestore';
 
 function ProductPage() {
   const [products, setProducts] = useState([]);
@@ -15,7 +15,8 @@ function ProductPage() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, 'products'));
+        const productsRef = collection(db, 'products');
+        const querySnapshot = await getDocs(productsRef);
         let productsData = querySnapshot.docs.map(doc => ({
           id: doc.id,
           ...doc.data()
