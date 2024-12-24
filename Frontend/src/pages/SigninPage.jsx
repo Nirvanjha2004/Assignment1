@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebase/config';
-import { signInWithEmailAndPassword } from 'firebase/auth/lite';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 export default function SigninPage() {
   const [email, setEmail] = useState();

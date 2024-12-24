@@ -5,9 +5,13 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
-    commonjsOptions: {
-      include: [/node_modules/],
-      transformMixedEsModules: true
+    rollupOptions: {
+      external: ['firebase'],
+      output: {
+        globals: {
+          firebase: 'Firebase'
+        }
+      }
     }
   },
   resolve: {
@@ -16,10 +20,6 @@ export default defineConfig({
     }
   },
   optimizeDeps: {
-    include: [
-      'firebase/app',
-      'firebase/auth/lite',
-      'firebase/firestore/lite'
-    ]
+    exclude: ['firebase']
   }
 })
