@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { db } from '../firebase/config';
-import { collection, getDocs } from '@firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore/lite';
 
 function ProductPage() {
   const [products, setProducts] = useState([]);

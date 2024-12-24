@@ -16,10 +16,10 @@ export default defineConfig({
     }
   },
   optimizeDeps: {
-    esbuildOptions: {
-      define: {
-        global: 'globalThis'
-      }
-    }
+    include: [
+      'firebase/app',
+      'firebase/auth',
+      'firebase/firestore/lite'
+    ]
   }
 })

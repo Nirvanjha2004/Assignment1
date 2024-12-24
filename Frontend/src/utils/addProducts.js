@@ -1,5 +1,5 @@
 import { db } from '../firebase/config';
-import { collection, writeBatch, doc } from '@firebase/firestore';
+import { collection, writeBatch, doc } from 'firebase/firestore/lite';
 
 const products = [
     {

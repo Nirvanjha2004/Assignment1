@@ -10,7 +10,7 @@ import FeedBack from "../components/Feedback";
 import Footer from "../components/Footer";
 import ShopNowCard from "../components/ShopNowCard";
 import { db } from '../firebase/config';
-import { collection, getDocs } from '@firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore/lite';
 import Card11 from "../components/Card11";
 import { addProductsToFirestore } from '../utils/addProducts';
 
